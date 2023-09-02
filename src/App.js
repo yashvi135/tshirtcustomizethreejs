@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./component/Navbar";
+import Tshirt3D from "./component/Tshirt";
+import CustomizeTshirtSide from "./component/CustomizeTshirtSide";
+import Canvas from './canvas';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Navbar/>
+     <div className="flex-1 flex">
+        {/* <Tshirt3D className="" />  */}
+        <Canvas/>
+        <CustomizeTshirtSide className="" /> 
+        
+      </div>
     </div>
   );
 }

@@ -1,0 +1,70 @@
+.productlink{
+    color: #53aacd;
+    margin-left: 12px;
+}
+.design_tabs{
+    font-weight: 600;
+    font-size: 20px;
+}
+.tabbtn:hover{
+    background-color: #cfc7c7;
+    padding: 7px 7px;
+    border-radius: 2px;
+}
+.tabbtn:active{
+border: 2px solid black;
+}
+.designtshirtmodel{
+    margin: 12px 0px;
+    padding: 12px 42px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.tshirtcustomizeimg{
+    margin-left: 30%;
+    width: 67%;
+}
+.customizetshirttabs{
+    margin-left: 16%;
+}
+.footermenuoptionmodal{
+    padding: 17px 20px;
+    margin-top: 20px;
+    justify-content: space-between;
+    display: flex;
+    font-size: 25px;
+    cursor: pointer;
+}
+.colorpickermodal{
+    padding: 40px 54px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.footeramountdetails{
+    margin-top: 21%;
+}
+.pricing_amount{
+    font-weight: 700;
+    font-size: 20px;
+}
+.amountinputbox input{
+    margin-left: 10px;
+    /* border: 2px solid black; */
+    border: none;
+    outline: none;
+    width: 63px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.addtocartbtn{
+    margin-top: 22%;
+    margin-left: 10%;
+}
+.addtocartbtn button{
+    color: white;
+    width: 190%;
+    background-color: #4682B4	;
+    padding: 7px 7px;
+}
+.filepicker-container{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+}
+
