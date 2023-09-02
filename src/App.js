@@ -8,10 +8,8 @@ function App() {
     <div className="App">
      <Navbar/>
      <div className="flex-1 flex">
-        {/* <Tshirt3D className="" />  */}
         <Canvas/>
         <CustomizeTshirtSide className="" /> 
-        
       </div>
     </div>
   );
