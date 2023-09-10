@@ -7,6 +7,14 @@ const state = proxy({
   isFullTexture: false,
   logoDecal: './threejs.png',
   fullDecal: './threejs.png',
+  items: { front: "#EFBD48", back: "#fff", collar: "#fff", sleeves: "#fff"},
+  textDecal: {
+    content: "  ",
+    position: [0, 0, 0],
+    fontSize: 0.08,
+    textcolor: "",
+    fontFamily: "Verdana",
+  },
 });
 
 export default state;

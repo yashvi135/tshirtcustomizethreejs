@@ -35,7 +35,8 @@ border: 2px solid black;
     cursor: pointer;
 }
 .colorpickermodal{
-    padding: 40px 54px;
+    padding: 37px 57px;
+    width: 335px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .footeramountdetails{

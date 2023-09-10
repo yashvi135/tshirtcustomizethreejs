@@ -26,12 +26,10 @@ const Customizer = () => {
   const generateTabContent = () => {
     switch (activeEditorTab) {
       case "colorpicker":
-        return <ColorPicker />
+        //return <ColorPicker />
       case "filepicker":
         return <Logo
-          file={file}
-          setFile={setFile}
-          readFile={readFile}
+        file={file} setFile={setFile} readFile={readFile}
         />
     
       default:
@@ -95,7 +93,7 @@ const Customizer = () => {
             <div className="flex items-center min-h-screen">
               <div className="editortabs-container tabs">
                
-
+             
                 {generateTabContent()}
               </div>
             </div>

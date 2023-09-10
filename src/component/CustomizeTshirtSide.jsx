@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal'; 
 import DesignTshirt from './DesignTshirt';
 import ColorPicker from './ColorPicker';
 import state from '../store';
 import "../styles/Navbar.css"
 import Logo from './Logo';
-import CustomButton from './CustomButton';
+import CustomizerText from './CustomizerText';
 import { downloadCanvasToImage, reader } from '../config/helpers';
 import { EditorTabs, FilterTabs, DecalTypes } from '../config/constants';
-import { fadeAnimation, slideAnimation } from '../config/motion';
 import FooterMenuOptions from './FooterMenuOptions';
 import Footer from './Footer';
 
@@ -16,6 +14,7 @@ const CustomizeTshirtSide = () => {
   const [activeTab, setActiveTab] = useState('design'); 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [file, setFile] = useState('');
+  
 
   const openModal = (tab) => {
     setActiveTab(tab); // Set the active tab when opening the modal
@@ -32,11 +31,20 @@ const CustomizeTshirtSide = () => {
   const handleDecals = (type, result) => {
     const decalType = DecalTypes[type];
 
-    state[decalType.stateProperty] = result;
+  // Update the state based on the 'type'
+  if (type === 'logo') {
+    state.isLogoTexture = true;
+    state.isFullTexture = false;
+    state.logoDecal = result;
+  } else if (type === 'full') {
+    state.isLogoTexture = false;
+    state.isFullTexture = true;
+    state.fullDecal = result;
+  }
 
-    if(!activeFilterTab[decalType.filterTab]) {
-      handleActiveFilterTab(decalType.filterTab)
-    }
+  if (!activeFilterTab[decalType.filterTab]) {
+    handleActiveFilterTab(decalType.filterTab);
+  }
   }
 
   const handleActiveFilterTab = (tabName) => {
@@ -64,17 +72,19 @@ const CustomizeTshirtSide = () => {
   }
 
   const readFile = (type) => {
-    reader(file)
+    reader(file, type) // Pass the 'type' parameter to the 'reader' function
       .then((result) => {
         handleDecals(type, result);
         setActiveEditorTab("");
-      })
+      });
   }
-
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
+  const setTextOnTshirt = (text) => {
+    // Update the state with the text input
+    state.textOnTshirt = text;
+  };
   const renderTabContent = () => {
     if (activeTab === 'design') {
       return <DesignTshirt />;
@@ -82,6 +92,8 @@ const CustomizeTshirtSide = () => {
       return <ColorPicker />;
     } else if (activeTab === 'logo') {
       return <Logo file={file} setFile={setFile}  readFile={readFile}/>;
+    } else if(activeTab==='text'){
+      return <CustomizerText/>
     }
     return null;
   };
@@ -106,6 +118,12 @@ const CustomizeTshirtSide = () => {
           onClick={() => openModal('logo')} // Open modal for logo tab
         >
           Logo
+        </button>
+        <button
+          className={`ml-5 tabbtn ${activeTab === 'text' ? 'active' : ''}`}
+          onClick={() => openModal('text')} // Open modal for logo tab
+        >
+          Text
         </button>
       </div>
 

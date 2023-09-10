@@ -10,7 +10,7 @@ function App() {
      <Navbar/>
      <div className="flex-1 flex">
         <Canvas/>
-       <Customizer/>
+       {/* <Customizer/> */}
        <CustomizeTshirtSide/>
       </div>
     </div>

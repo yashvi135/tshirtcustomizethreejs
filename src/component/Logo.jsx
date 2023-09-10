@@ -3,12 +3,7 @@ import React,{useState} from 'react'
 import CustomButton from './CustomButton'
 import {  reader } from '../config/helpers';
 import state from '../store';
-const Logo = () => {
-  const [file, setFile] = useState('');
- 
-  const readFile = (type) => {
-    reader(file)
-  }
+const Logo = ({ file, setFile, readFile }) => {
  
   return (
     <div className="filepicker-container">
@@ -17,7 +12,7 @@ const Logo = () => {
           id="file-upload"
           type="file"
           accept="image/*"
-          onChange={(e) => setFile(e.target.files[0])}
+          onChange={(e) => setFile(e.target.files[0])}s
         />
         <label htmlFor="file-upload" className="filepicker-label">
           Upload File
