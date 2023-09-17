@@ -4,20 +4,18 @@ import { easing } from 'maath';
 import { useSnapshot } from 'valtio';
 import { useFrame } from '@react-three/fiber';
 import { TextGeometry, MeshBasicMaterial, Mesh } from 'three';
-import { Decal, useGLTF, useTexture, Text } from "@react-three/drei/core";
-
-
+import { Decal, useGLTF, useTexture,Text } from "@react-three/drei";
 import state from '../store';
 
 const Tshirt = () => {
   const snap = useSnapshot(state);
-  const { nodes, materials } = useGLTF('/shirt_baked.glb');
+  const gltf = useGLTF("/shirt_baked.glb");
+  const { nodes, materials } = gltf;
   const logoTexture = useTexture(snap.logoDecal);
   const fullTexture = useTexture(snap.fullDecal);
   useFrame((state, delta) => easing.dampC(materials.lambert1.color, snap.color, 0.25, delta));
   const stateString = JSON.stringify(snap);
-  
-  
+  console.log("snap",snap.textDecal);
   return (
    
     <group>
@@ -42,7 +40,6 @@ const Tshirt = () => {
             position={[0, 0.04, 0.15]}
             rotation={[0, 0, 0]}
             scale={0.15}
-            anisotropy={16}
             map={logoTexture}
             depthTest={false}
             depthWrite={true}
@@ -62,6 +59,7 @@ const Tshirt = () => {
           </Text>
         </mesh>
       )}
+      
     </group>
    
   )
