@@ -100,25 +100,25 @@ function CustomizerText() {
         <label className="mr-2 font-bold">Position:</label>
         <div className="flex">
           <button
-            onClick={() => handlePositionUpdate(0, -0.1)}
+            onClick={() => handlePositionUpdate(0, -0.01)}
             className="border border-gray-400 rounded-full px-3 py-1 mr-2 hover:bg-blue-700 hover:text-white"
           >
             →
           </button>
           <button
-            onClick={() => handlePositionUpdate(0, 0.1)}
+            onClick={() => handlePositionUpdate(0, 0.01)}
             className="border border-gray-400 rounded-full px-3 py-1 mr-2 hover:bg-blue-700 hover:text-white"
           >
             ←
           </button>
           <button
-            onClick={() => handlePositionUpdate(1, 0.1)}
+            onClick={() => handlePositionUpdate(1, 0.01)}
             className="border border-gray-400 rounded-full px-3 py-1 mr-2 hover:bg-blue-700 hover:text-white"
           >
             ↑
           </button>
           <button
-            onClick={() => handlePositionUpdate(1, -0.1)}
+            onClick={() => handlePositionUpdate(1, -0.01)}
             className="border border-gray-400 rounded-full px-3 py-1 hover:bg-blue-700 hover:text-white"
           >
             ↓

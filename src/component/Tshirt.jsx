@@ -47,17 +47,16 @@ const Tshirt = () => {
          )}
       </mesh>
       {snap.textDecal && (
-        <mesh position={[0.4, 0.9, 1]}>
-          <Text
-            position={snap.textDecal.position}
-            fontSize={snap.textDecal.fontSize} // Accessing fontSize property
-            color={snap.textDecal.textcolor} // Accessing color property
-            scale={0.2}
-            fontFamily={snap.textDecal.fontFamily} // Accessing fontFamily property
-          >
-            {snap.textDecal.content} {/* Accessing content property */}
-          </Text>
-        </mesh>
+         <mesh position={[snap.textDecal.position[0], snap.textDecal.position[1], 1]}>
+         <Text
+           fontSize={snap.textDecal.fontSize}
+           color={snap.textDecal.textcolor}
+           scale={0.2}
+           fontFamily={snap.textDecal.fontFamily}
+         >
+           {snap.textDecal.content}
+         </Text>
+       </mesh>
       )}
       
     </group>
